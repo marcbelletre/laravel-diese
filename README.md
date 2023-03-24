@@ -1,10 +1,9 @@
-# Laravel / Dièse Software
+# Laravel / Diese Software
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marcbelletre/laravel-diese.svg?style=flat-square)](https://packagist.org/packages/marcbelletre/laravel-diese)
 [![Total Downloads](https://img.shields.io/packagist/dt/marcbelletre/laravel-diese.svg?style=flat-square)](https://packagist.org/packages/marcbelletre/laravel-diese)
-![GitHub Actions](https://github.com/marcbelletre/laravel-diese/actions/workflows/main.yml/badge.svg)
 
-This package provides a convenient Laravel wrapper for interacting with the Dièse Software API.
+This package provides a convenient Laravel wrapper for interacting with the [https://www.diesesoftware.com](Diese Software) API.
 
 ## Installation
 
@@ -17,7 +16,13 @@ composer require marcbelletre/laravel-diese
 ## Usage
 
 ```php
-// Usage description here
+use MarcBelletre\LaravelDiese\Facades\Diese;
+
+// Retrieve productions
+$productions = Diese::getProductions();
+
+// Retrieve a single production by its ID
+$production = Diese::getProduction(10);
 ```
 
 ### Testing
