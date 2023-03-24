@@ -1,10 +1,10 @@
-# Very short description of the package
+# Laravel / Dièse Software
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marcbelletre/laravel-diese.svg?style=flat-square)](https://packagist.org/packages/marcbelletre/laravel-diese)
 [![Total Downloads](https://img.shields.io/packagist/dt/marcbelletre/laravel-diese.svg?style=flat-square)](https://packagist.org/packages/marcbelletre/laravel-diese)
 ![GitHub Actions](https://github.com/marcbelletre/laravel-diese/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package provides a convenient Laravel wrapper for interacting with the Dièse Software API.
 
 ## Installation
 
