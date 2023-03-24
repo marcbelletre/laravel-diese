@@ -13,6 +13,8 @@ class LaravelDiese
 
     protected array $headers;
 
+    protected string $url;
+
     /**
      * Create a new Client instance.
      */
@@ -49,14 +51,12 @@ class LaravelDiese
 
     /**
      * Perform a POST request.
-     *
-     * @param  ?array  $data
      */
     private function makeRequest(string $url, ?array $data = []): mixed
     {
         $response = $this->client->request('POST', $url, [
             'headers' => $this->headers,
-            'form_params' => $data,
+            'body' => json_encode($data),
         ]);
 
         return json_decode($response->getBody()->getContents())->message;
@@ -75,12 +75,92 @@ class LaravelDiese
     }
 
     /**
+     * Retrieve a season by its ID.
+     */
+    public function getSeason(string|int $id, ?array $data = []): mixed
+    {
+        $seasons = $this->makeRequest("season/{$id}", $data);
+
+        return $seasons[0] ?? null;
+    }
+
+    /**
+     * Retrieve all seasons.
+     */
+    public function getSeasons(?array $data = []): array
+    {
+        return $this->makeRequest('seasons', $data);
+    }
+
+    /**
+     * Retrieve all production types.
+     */
+    public function getProductionTypes(?array $data = []): array
+    {
+        return $this->makeRequest('productionTypes', $data);
+    }
+
+    /**
+     * Retrieve a production type by its ID.
+     */
+    public function getProductionType(string|int $id, ?array $data = []): mixed
+    {
+        $productionTypes = $this->makeRequest("productionType/{$id}", $data);
+
+        return $productionTypes[0] ?? null;
+    }
+
+    /**
      * Retrieve all productions.
      */
-    public function getProductions(): array
+    public function getProductions(?array $data = []): array
     {
-        $productions = $this->makeRequest('productions');
+        return $this->makeRequest('productions', $data);
+    }
 
-        return $productions;
+    /**
+     * Retrieve a production by its ID.
+     */
+    public function getProduction(string|int $id, ?array $data = []): mixed
+    {
+        $productions = $this->makeRequest("production/{$id}", $data);
+
+        return $productions[0] ?? null;
+    }
+
+    /**
+     * Retrieve all activity types.
+     */
+    public function getActivityTypes(?array $data = []): array
+    {
+        return $this->makeRequest('activityTypes', $data);
+    }
+
+    /**
+     * Retrieve an activity type by its ID.
+     */
+    public function getActivityType(string|int $id, ?array $data = []): mixed
+    {
+        $activityTypes = $this->makeRequest("activityType/{$id}", $data);
+
+        return $activityTypes[0] ?? null;
+    }
+
+    /**
+     * Retrieve all activities.
+     */
+    public function getActivities(?array $data = []): array
+    {
+        return $this->makeRequest('activities', $data);
+    }
+
+    /**
+     * Retrieve an activity by its ID.
+     */
+    public function getActivity(string|int $id, ?array $data = []): mixed
+    {
+        $activities = $this->makeRequest("activity/{$id}", $data);
+
+        return $activities[0] ?? null;
     }
 }
