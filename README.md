@@ -3,7 +3,8 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marcbelletre/laravel-diese.svg?style=flat-square)](https://packagist.org/packages/marcbelletre/laravel-diese)
 [![Total Downloads](https://img.shields.io/packagist/dt/marcbelletre/laravel-diese.svg?style=flat-square)](https://packagist.org/packages/marcbelletre/laravel-diese)
 
-This package provides a convenient Laravel wrapper for interacting with the [https://www.diesesoftware.com](Diese Software) API.
+### This package provides a convenient Laravel wrapper for interacting with the [Diese Software](https://www.diesesoftware.com) API.  
+### [API Documentation](https://apidoc.diesesoftware.com)
 
 ## Installation
 
