@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marcbelletre/laravel-diese.svg?style=flat-square)](https://packagist.org/packages/marcbelletre/laravel-diese)
 [![Total Downloads](https://img.shields.io/packagist/dt/marcbelletre/laravel-diese.svg?style=flat-square)](https://packagist.org/packages/marcbelletre/laravel-diese)
 
-### This package provides a convenient Laravel wrapper for interacting with the [Diese Software](https://www.diesesoftware.com) API.  
+### This package provides a convenient Laravel wrapper for interacting with the [Diese Software](https://www.diesesoftware.com) API.
 ### [API Documentation](https://apidoc.diesesoftware.com)
 
 ## Installation
@@ -19,11 +19,13 @@ composer require marcbelletre/laravel-diese
 ```php
 use MarcBelletre\LaravelDiese\Facades\Diese;
 
-// Retrieve productions
-$productions = Diese::getProductions();
+// Use the `get` method to retrieve all records for a content type
+$productions = Diese::get('productions');
+$cast = Diese::find('production/cast/10');
 
-// Retrieve a single production by its ID
-$production = Diese::getProduction(10);
+// Use the `find` method to retrieve a single record by its ID
+$production = Diese::find('production', 10);
+$productionType = Diese::find('productionType', 2);
 ```
 
 ### Testing
